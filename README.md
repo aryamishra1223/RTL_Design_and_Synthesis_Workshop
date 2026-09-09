@@ -31,17 +31,17 @@ This workshop is includes :
 
  ## Workshop Structure
 
-This workshop is organized day-by-day, with each folder containing labs, code, and notes for that session.
+This workshop consists of following.
 
-- *Day 1 – Introduction to Verilog*
+- [Day 1 – Introduction to Verilog](./Day1_Introduction_to_Verilog/)
 
-- *Day 2 – Simulation with Icarus Verilog*
- 
-- *Day 3 – Logic Synthesis with Yosys*
+- [Day 2 – Simulation with Icarus Verilog](./Day2_Simulation_with_Icarus_Verilog/)
 
-- *Day 4 - GLS, Blocking and Non-blocking in Verilog, Synthesis*
-  
-- *Day 5 – Optimization Techniques*
+- [Day 3 – Logic Synthesis with Yosys](./Day3_Logic_Synthesis_with_Yosys/)
+
+- [Day 4 – GLS, Blocking and Non-blocking in Verilog, Synthesis](./Day4_GLS_Blocking_NonBlocking_Synthesis/)
+
+- [Day 5 – Optimization Techniques](./Day5_Optimization_Techniques/)
  
 Each day's folder includes:
 - A README.md explaining the day's concepts
