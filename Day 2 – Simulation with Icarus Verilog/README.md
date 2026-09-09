@@ -55,6 +55,7 @@ Merges all logic into a single, massive top-level layer.
 | Optimization | Limited across modules | Global |
 
 ---
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/36ec3a2e-836b-4ddc-9685-0c69e7dfb0ec" />
 
 ## Flip-Flop Coding Styles
 
@@ -73,4 +74,59 @@ module dff_async_reset (
         else
             q <= d;
     end
+endmodule'''
+
+
+
+### Asynchronous Set D Flip-Flop
+'''verilog
+module dff_async_set (
+    input clk,
+    input async_set,
+    input d,
+    output reg q
+);
+    always @ (posedge clk, posedge async_set)
+    begin
+        if (async_set)
+            q <= 1'b1;
+        else
+            q <= d;
+    end
 endmodule
+
+
+### Synchronous Reset D Flip-flop
+'''verilog
+module dff_syncres (
+    input clk,
+    input async_reset,
+    input sync_reset,
+    input d,
+    output reg q
+);
+    always @ (posedge clk)
+    begin
+        if (sync_reset)
+            q <= 1'b0;
+        else
+            q <= d;
+    end
+endmodule
+'''
+
+
+# Simulation and Synthesis Workflow
+
+### Icarus Verilog Simulation
+
+1. Compile:
+   ```bash
+   iverilog dff_asyncres.v tb_dff_asyncres.v
+2. run
+./a.out
+
+3.View waveform
+gtkwave tb_dff_asyncres.vcd
+
+
