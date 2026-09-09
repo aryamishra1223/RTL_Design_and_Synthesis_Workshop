@@ -120,5 +120,13 @@ Steps for Yosys flow
  6. Visualize the gate-level netlist
     show
 
+
+## 7. Summary
+
+1. Learned simulators, designs, and testbenches.
+2. Performed iverilog simulation and visualized waveforms.
+3. Analysed 2:1 mux.
+4. Explored yosys.
+5. Understood need for various flavors in gate liberaries.
     
 
