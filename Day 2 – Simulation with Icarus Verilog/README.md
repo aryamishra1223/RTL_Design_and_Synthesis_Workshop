@@ -74,12 +74,12 @@ module dff_async_reset (
         else
             q <= d;
     end
-endmodule'''
+endmodule```
 
 
 
 ### Asynchronous Set D Flip-Flop
-'''verilog
+```verilog
 module dff_async_set (
     input clk,
     input async_set,
@@ -97,7 +97,7 @@ endmodule
 
 
 ### Synchronous Reset D Flip-flop
-'''verilog
+```verilog
 module dff_syncres (
     input clk,
     input async_reset,
@@ -113,10 +113,10 @@ module dff_syncres (
             q <= d;
     end
 endmodule
-'''
+```
 
 
-# Simulation and Synthesis Workflow
+## Simulation and Synthesis Workflow
 
 ### Icarus Verilog Simulation
 
@@ -124,9 +124,28 @@ endmodule
    ```bash
    iverilog dff_asyncres.v tb_dff_asyncres.v
 2. run
+```bash
 ./a.out
 
 3.View waveform
 gtkwave tb_dff_asyncres.vcd
 
+end
+endmodule
+  ```
 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a683064d-9bbb-48ab-9e09-0b85a3fdf53f" />
+
+### Synthesis with yosys
+
+code:
+
+yosys
+read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog /path/to/dff_asyncres.v
+synth -top dff_asyncres
+dfflibmap -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/f45fb29b-c040-4fa3-bf93-a11da9a0ac3b" />
